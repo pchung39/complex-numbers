@@ -5,11 +5,15 @@
 
 
 int main () {
-   Complex a(1,2), b(3,4), c;
+   Complex a(1,2), b(3,4), c, d(4,5);
 
    cout << a.toString() << endl;
-   cout << a.norm() << endl;
-   cout << a.reciprocal().toString() << endl;
+   cout << d.norm() << endl;
+
+   // cout << a.norm() << endl;
+   // cout << a.reciprocal().toString() << endl;
+   // Complex hello = 1;
+   // cout << hello.toString() << endl;
     
    // c = a + b;
    // cout << a << " + " << b << " = " << c << endl;
