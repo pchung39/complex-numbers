@@ -5,11 +5,25 @@
 
 
 int main () {
-   Complex a(1,2), b(3,4), c, d(4,5);
+   Complex a(1,1), b(3,4), c, d(2,2);
 
-   cout << a.toString() << endl;
-   cout << d.norm() << endl;
+   // cout << a.toString() << endl;
+   // cout << d.norm() << endl;
 
+   // Complex test = b / d;
+   // cout << test.toString() << endl;
+
+   cout << b.reciprocal().toString() << endl;
+
+   Complex x = 10;
+   cout << x.toString() << endl;
+
+   Complex hello = a/d;
+   ///cout << hello.toString() << endl;
+
+   if (a/b == 0) {
+      cout << "hi";;
+   }
    // cout << a.norm() << endl;
    // cout << a.reciprocal().toString() << endl;
    // Complex hello = 1;

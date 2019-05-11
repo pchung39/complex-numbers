@@ -3,7 +3,7 @@
 #include <string>
 #include <cmath>
 #include <stack>
-#include <ostream>
+#include <sstream> 
 using namespace std;
 
 class Complex {
@@ -13,10 +13,13 @@ class Complex {
 	public:
 		// TODO: Type your code here
 		Complex() : real(0.0), imag(0.0) {}; // DONE
+		Complex(int inputInt) : real(static_cast<double>(inputInt)), imag(0.0) {};
 		Complex(double realInput, double imagInput) : real(realInput), imag(imagInput) {}; //DONE
-		//Complex operator=(Complex& rhs);
-		Complex operator=(int realAssign);
+		Complex(double realInput) : real(realInput), imag(0.0) {};
+		Complex operator=(Complex& rhs);
 		string toString(); //DONE
+		bool determineRealWholeNumber();
+		bool determineImagWholeNumber();
 
 		// getters 
 		double getReal() {return this->real;}; //DONE
@@ -37,12 +40,14 @@ class Complex {
 		};
 		// operators (the first one's signature is below for reference)
 		friend Complex operator+(Complex& a, Complex& b);
+		friend Complex operator+(Complex& a, int inputInt);
 		friend Complex operator-(Complex& a, Complex& b);
 		friend Complex operator*(Complex& a, Complex& b);
 		friend Complex operator/(Complex& a, Complex& b);
 		friend bool operator<(Complex& a, Complex& b);
 		friend bool operator==(Complex& a, Complex& b);
-		friend ostream& operator<<(ostream& os, string str);
+		//friend bool operator==(Complex& a, int inputInt);
+		friend string operator<<(stringstream& ss, Complex a);
 		
 
 };
