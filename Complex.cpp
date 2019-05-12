@@ -98,28 +98,17 @@ double Complex::norm() {
 Complex Complex::reciprocal() {
 
     double normValue = this->norm();
-    // cout << "NORM: " << normValue << endl;
-    // cout << "real: " << this->getReal() << endl;
-    // cout << "imag: " << this->getImag() << endl;
+    cout << "NORM: " << normValue << endl;
+    cout << "real: " << this->getReal() << endl;
+    cout << "imag: " << this->getImag() << endl;
 
-    try {
-        if (normValue == 0) {
-            throw Complex::DivByZeroException();
-        }
-    }
-    catch (Complex::DivByZeroException &excpt) {
-        cout << excpt.what() << endl;
-    }
+    // if (normValue == 0) {
+    //     throw Complex::DivByZeroException();
+    // }
 
-    try {
-        if (normValue < 1e-10) {
-            throw Complex::DivByZeroException();
-        }
+    if (normValue < 1e-10) {
+        throw Complex::DivByZeroException();
     }
-    catch (Complex::DivByZeroException &excpt) {
-        cout << excpt.what() << endl;
-    }
-
 
     double recipReal = (this->getReal()/normValue);   
     double recipImag = -(this->getImag()/normValue);   
@@ -129,13 +118,13 @@ Complex Complex::reciprocal() {
 
     Complex *newComplex = new Complex(recipReal, recipImag);
 
-    cout << "NEW: " << newComplex->toString() << endl; 
+    // cout << "NEW: " << newComplex->toString() << endl; 
 
     return *newComplex;
 }
 
 
-bool operator==(Complex& a, Complex& b) {
+bool operator==(const Complex& a, const Complex& b) {
     
     if (a.getReal() != b.getReal()) {
         return false;
@@ -149,22 +138,6 @@ bool operator==(Complex& a, Complex& b) {
 
 }
 
-// bool operator==(Complex& a, int inputInt) {
-
-//     //cout << "A: " << a.getImag() << endl;
-//     //cout << "INPUT: " << inputInt << endl;
-//     if (a.getImag() != inputInt) {
-//         //cout << "THEY DO NOT MATCH" << endl;
-//         return false;
-//     }
-//     else {
-//         //cout << "THEY DO" << endl;
-//         return true;
-//     }
-
-//     return true;
-
-// }
 
 bool operator<(Complex& a, Complex& b) {
     
@@ -244,20 +217,20 @@ Complex operator*(Complex& a, Complex& b) {
 
 Complex operator/(Complex& a, Complex& b) {
 
-    cout << "A real: " << a.getReal() << endl;
-    cout << "A imag: " << a.getImag() << endl;
+    // cout << "A real: " << a.getReal() << endl;
+    // cout << "A imag: " << a.getImag() << endl;
 
-    cout << "B real: " << b.getReal() << endl;
-    cout << "B imag: " << b.getImag() << endl;
+    // cout << "B real: " << b.getReal() << endl;
+    // cout << "B imag: " << b.getImag() << endl;
 
     Complex bRecip = b.reciprocal();
 
-    cout << "B Recip real: " << bRecip.getReal() << endl;
-    cout << "B Recip imag: " << bRecip.getImag() << endl;
+    // cout << "B Recip real: " << bRecip.getReal() << endl;
+    // cout << "B Recip imag: " << bRecip.getImag() << endl;
 
     Complex response = a * bRecip;
-    cout << "imag: " << response.getImag() << endl;
-    cout << "RES: " << response.toString() << endl;
+    // cout << "imag: " << response.getImag() << endl;
+    // cout << "RES: " << response.toString() << endl;
   
     return response;
 

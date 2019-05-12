@@ -18,12 +18,12 @@ int main () {
    Complex x = 10;
    cout << x.toString() << endl;
 
-   Complex hello = a/d;
+   // Complex hello = a/d;
    ///cout << hello.toString() << endl;
 
-   if (a/b == 0) {
-      cout << "hi";;
-   }
+   // if (a/b == 10) {
+   //    cout << "hi";;
+   // }
    // cout << a.norm() << endl;
    // cout << a.reciprocal().toString() << endl;
    // Complex hello = 1;

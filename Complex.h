@@ -22,8 +22,8 @@ class Complex {
 		bool determineImagWholeNumber();
 
 		// getters 
-		double getReal() {return this->real;}; //DONE
-		double getImag() {return this->imag;}; //DONE
+		double getReal() const {return this->real;}; //DONE
+		double getImag() const {return this->imag;}; //DONE
 
 		// setters 
 		
@@ -45,7 +45,7 @@ class Complex {
 		friend Complex operator*(Complex& a, Complex& b);
 		friend Complex operator/(Complex& a, Complex& b);
 		friend bool operator<(Complex& a, Complex& b);
-		friend bool operator==(Complex& a, Complex& b);
+		friend bool operator==(const Complex& a, const Complex& b);
 		//friend bool operator==(Complex& a, int inputInt);
 		friend string operator<<(stringstream& ss, Complex a);
 		
